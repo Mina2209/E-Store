@@ -8,7 +8,7 @@ const poppins = Poppins({ subsets: ["latin"], weight: ["400", "700"] });
 
 export const metadata: Metadata = {
   title: "E-Shop",
-  description: "E-commerce app.",
+  description: "E-Commerce App.",
 };
 
 export default function RootLayout({
