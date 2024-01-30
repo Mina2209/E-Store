@@ -1,3 +1,12 @@
+import Container from "./components/Container";
+import HomeBanner from "./components/HomeBanner";
+
 export default function Home() {
-  return <div>E-Shop</div>;
+  return (
+    <div className="p-8">
+      <Container>
+        <HomeBanner />
+      </Container>
+    </div>
+  );
 }

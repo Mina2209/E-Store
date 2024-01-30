@@ -4,8 +4,8 @@ import FooterList from "./FooterList";
 import { MdFacebook } from "react-icons/md";
 import {
   AiFillTwitterCircle,
-  AiFillYoutube,
   AiFillInstagram,
+  AiFillYoutube,
 } from "react-icons/ai";
 
 const Footer = () => {
