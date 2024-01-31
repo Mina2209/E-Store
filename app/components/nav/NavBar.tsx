@@ -1,8 +1,8 @@
 import Container from "../Container";
 import Link from "next/link";
-import { Redressed } from "next/font/google";
+import { Dancing_Script } from "next/font/google";
 
-const redressed = Redressed({ subsets: ["latin"], weight: ["400"] });
+const dancingscript = Dancing_Script ({ subsets: ["latin"], weight: ["400"] });
 
 const NavBar = () => {
   return (
@@ -27,8 +27,8 @@ const NavBar = () => {
             md:gap-0
           "
           >
-            <Link href="/" className={`${redressed.className} font-bold text-2xl`}>
-              E~Shop
+            <Link href="/" className={`${dancingscript.className} font-bold text-2xl`}>
+              Mina~Shop
             </Link>
             <div className="hidden md:block">Search</div>
             <div className="flex items-center gap-8 md:gap-12">

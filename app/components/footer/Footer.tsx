@@ -39,7 +39,7 @@ const Footer = () => {
                 accessories.{" "}
               </p>
               <p>
-                &copy; {new Date().getFullYear()} E~Shop. All rights reserved.
+                &copy; {new Date().getFullYear()} Mina~Shop. All rights reserved.
               </p>
             </div>
           </FooterList>
