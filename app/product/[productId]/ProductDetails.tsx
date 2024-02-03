@@ -1,5 +1,6 @@
 "use client";
 
+import Button from "@/app/components/Button";
 import FormatPrice from "@/utils/formatPrice";
 import { Rating } from "@mui/material";
 import { useState } from "react";
@@ -17,7 +18,6 @@ export type CartProductType = {
   brand: string;
   SelectedImg: any;
   quantity: number;
-
 };
 
 export type SelectedImgType = {
@@ -29,7 +29,6 @@ export type SelectedImgType = {
 const HorizontalLine = () => <hr className="w-[30%] my-2" />;
 
 const ProductDetails: React.FC<ProductDetailsProps> = ({ data }) => {
-
   const [CartProduct, setCartProduct] = useState<CartProductType>({
     id: data.id,
     name: data.name,
@@ -37,7 +36,7 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ data }) => {
     description: data.description,
     category: data.category,
     brand: data.brand,
-    SelectedImg: {...data.images[0]},
+    SelectedImg: { ...data.images[0] },
     quantity: 1,
   });
 
@@ -76,7 +75,9 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ data }) => {
         <HorizontalLine />
         <div>quantity</div>
         <HorizontalLine />
-        <div>add to cart</div>
+        <div className="max-w-[300px]">
+          <Button label="Add To Cart" onClick={() => {}} />
+        </div>
       </div>
     </div>
   );
