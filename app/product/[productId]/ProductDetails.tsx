@@ -1,9 +1,10 @@
 "use client";
 
 import Button from "@/app/components/Button";
+import SetQuantity from "@/app/components/products/SetQuantity";
 import FormatPrice from "@/utils/formatPrice";
 import { Rating } from "@mui/material";
-import { useState } from "react";
+import { useCallback, useState } from "react";
 
 interface ProductDetailsProps {
   data: any;
@@ -44,6 +45,22 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ data }) => {
     data.reviews.reduce((acc: number, item: any) => acc + item.rating, 0) /
     data.reviews.length;
 
+  const handleQtyIncrease = useCallback(() => {
+    if (CartProduct.quantity === 99) return;
+
+    setCartProduct((prev) => {
+      return { ...prev, quantity: prev.quantity++ };
+    });
+  }, [CartProduct]);
+
+  const handleQtyDecrease = useCallback(() => {
+    if (CartProduct.quantity === 1) return;
+
+    setCartProduct((prev) => {
+      return { ...prev, quantity: prev.quantity-- };
+    });
+  }, [CartProduct]);
+
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
       <div>Images</div>
@@ -73,7 +90,13 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ data }) => {
         <HorizontalLine />
         <div>color</div>
         <HorizontalLine />
-        <div>quantity</div>
+        <div>
+          <SetQuantity
+            cartProduct={CartProduct}
+            handleQtyDecrease={handleQtyDecrease}
+            handleQtyIncrease={handleQtyIncrease}
+          />
+        </div>
         <HorizontalLine />
         <div className="max-w-[300px]">
           <Button label="Add To Cart" onClick={() => {}} />
