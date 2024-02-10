@@ -1,6 +1,6 @@
 import Container from "@/app/components/Container";
-import { product } from "@/utils/product";
 import ProductDetails from "./ProductDetails";
+import { products } from "@/utils/products";
 
 interface ProductParams {
   productId?: string;
@@ -8,6 +8,9 @@ interface ProductParams {
 
 const Product = ({ params }: { params: ProductParams }) => {
   //console.log(params.productId);
+
+  const product = products.find((item) => item.id === params.productId);
+
   return (
     <div className="p-8">
       <Container>
