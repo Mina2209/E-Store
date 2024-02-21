@@ -6,7 +6,6 @@ import SetColor from "@/app/components/products/SetColor";
 import SetQuantity from "@/app/components/products/SetQuantity";
 import { useCart } from "@/hooks/useCart";
 import FormatPrice from "@/utils/formatPrice";
-import { Rating } from "@mui/material";
 import { useRouter } from "next/navigation";
 import { useCallback, useEffect, useState } from "react";
 import { MdCheckCircle } from "react-icons/md";
@@ -66,10 +65,6 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ data }) => {
     }
   }, [cartProducts]);
 
-  const productRating =
-    data.reviews.reduce((acc: number, item: any) => acc + item.rating, 0) /
-    data.reviews.length;
-
   const handleQtyIncrease = useCallback(() => {
     if (CartProduct.quantity === 99) return;
 
@@ -104,10 +99,7 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ data }) => {
       />
       <div className="flex flex-col gap-1 text-slate-500 text-sm">
         <h2 className="text-3xl font-medium text-slate-700">{data.name}</h2>
-        <div className="flex items-center gap-2">
-          <Rating value={productRating} readOnly />
-          <div>{data.reviews.length} reviews</div>
-        </div>
+        <HorizontalLine />
         <div className="font-bold text-2xl text-black">
           {FormatPrice(data.price)}
         </div>

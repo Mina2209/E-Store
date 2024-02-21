@@ -2,7 +2,6 @@
 
 import FormatPrice from "@/utils/formatPrice";
 import truncateText from "@/utils/truncateText";
-import { Rating } from "@mui/material";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 
@@ -23,9 +22,6 @@ interface ProductCardProps {
 }
 const ProductCard: React.FC<ProductCardProps> = ({ data }) => {
   const router = useRouter();
-  const productRating =
-    data.reviews.reduce((acc: number, item: any) => acc + item.rating, 0) /
-    data.reviews.length;
   return (
     <div
         onClick={() => router.push(`/product/${data.id}`)}
@@ -59,10 +55,6 @@ const ProductCard: React.FC<ProductCardProps> = ({ data }) => {
           />
         </div>
         <div className="mt-4">{truncateText(data.name)}</div>
-        <div>
-          <Rating value={productRating} readOnly />
-        </div>
-        <div>{data.reviews.length} reviews</div>
         <div className="font-semibold">{FormatPrice(data.price)}</div>
       </div>
     </div>

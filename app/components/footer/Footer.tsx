@@ -23,11 +23,8 @@ const Footer = () => {
             <Link href="#">Accessories</Link>
           </FooterList>
           <FooterList>
-            <h3 className="text-base font-bold mb-2">Customer Services</h3>
-            <Link href="#">Contact Us</Link>
-            <Link href="#">Shipping Policy</Link>
-            <Link href="#">Returns & Exchanges</Link>
-            <Link href="#">FAQs</Link>
+            <h3 className="text-base font-bold mb-2 cursor-pointer">Request Assistance</h3>
+            <img className="bg-white" src="request-assistance.gif" alt="Request Assistance GIF" />
           </FooterList>
           <FooterList>
             <div className="w-full md: 1/3 mb-6 md:mb-0">
@@ -41,23 +38,6 @@ const Footer = () => {
               <p>
                 &copy; {new Date().getFullYear()} Mina~Shop. All rights reserved.
               </p>
-            </div>
-          </FooterList>
-          <FooterList>
-            <h3 className="text-base font-bold mb-2">Follow Us</h3>
-            <div className="flex gap-2">
-              <Link href="#">
-                <MdFacebook size={24} />
-              </Link>
-              <Link href="#">
-                <AiFillTwitterCircle size={24} />
-              </Link>
-              <Link href="#">
-                <AiFillInstagram size={24} />
-              </Link>
-              <Link href="#">
-                <AiFillYoutube size={24} />
-              </Link>
             </div>
           </FooterList>
         </div>
