@@ -3,7 +3,7 @@ import Link from "next/link";
 import { Dancing_Script } from "next/font/google";
 import CartCount from "./CartCount";
 
-const dancingscript = Dancing_Script ({ subsets: ["latin"], weight: ["400"] });
+const dancingscript = Dancing_Script ({ subsets: ["latin"], weight: ["500"] });
 
 const NavBar = () => {
   return (
